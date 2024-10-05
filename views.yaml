@@ -1,5 +1,7 @@
 views:
-  - output: "index.html"
+  - output: "site/index.html"
     query: "index.rq"
     template: "index.html"
+    base_url: "https://maxguen.github.io/artbase/"
+
     
