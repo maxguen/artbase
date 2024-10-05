@@ -1,0 +1,13 @@
+PREFIX rt: <https://artbase.rhizome.org/prop/direct/>
+SELECT DISTINCT ?workTitle ?creationDate ?artworkPage ?artbaseLegacyTags WHERE {
+  # r:Q676 is the artist Andy Cox if I need to sub it in next line for testing
+  ?artwork rt:P29  <{{.}}> ;    # artwork by artist
+    rdfs:label ?workTitle;
+  rt:P26 ?creationDateTime .
+  OPTIONAL { ?artwork rt:P48 ?artbaseLegacyTags . }
+  BIND(SUBSTR(str(?creationDateTime),1,10) AS ?creationDate)
+  ?artworkPage schema:about ?artwork;
+    schema:isPartOf <https://artbase.rhizome.org/>.
+}
+ORDER BY (?workTitle)
+

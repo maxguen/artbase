@@ -1,0 +1,12 @@
+{{ template "base" . }}
+{{ define "title" }}Rhizome Artbase Artists and Works {{ end }}
+
+{{ define "content" }}
+<h1>Rhizome Artbase Artists and Works</h1>
+<ul>
+    {{ range . }}
+<h2>Artist: {{ .artistName }} ({{ .searchTag }} and other works)</h2>
+{{ include "artistsWorks.html" (query "artistsWorks.rq" .artist.String) }}
+{{ end }}
+</ul>
+{{ end }}

@@ -1,0 +1,11 @@
+PREFIX rt: <https://artbase.rhizome.org/prop/direct/>
+SELECT DISTINCT ?artistName ?artist ?searchTag WHERE {
+   BIND("Flash" AS ?searchTag)
+   ?artwork rt:P29 ?artist . 
+   ?artist rdfs:label ?artistName .
+   ?artwork rt:P48 ?artbaseLegacyTags .
+   # Compare lower-case versions of both to make it case-insensitive
+   FILTER CONTAINS(LCASE(?artbaseLegacyTags),LCASE(?searchTag))
+}
+ORDER BY (?artistName)
+

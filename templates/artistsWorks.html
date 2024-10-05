@@ -1,0 +1,11 @@
+<table>
+  <tr><th width="200">title</th><th width="100">creation date</th><th>tags</th></tr>
+    {{ range . }}
+    <tr>
+      <td><a href='{{ .artworkPage }}'>{{ .workTitle}}</a></td>
+      <td>{{ .creationDate}}</td>
+      <td>{{ .artbaseLegacyTags }}</td>
+    </tr>
+        {{ end }}
+</table>
+

@@ -1,0 +1,11 @@
+{ font-family: arial,helvetica; font-size:12pt; }
+
+body {
+    margin: .25in .5in .25in .5in; /* t,r,b,l */
+    font-family: arial,helvetica; 
+}
+
+th {
+    text-align: left;
+    background: lightgray;
+}

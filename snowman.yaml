@@ -1,0 +1,4 @@
+sparql_client:
+  endpoint: "https://query.artbase.rhizome.org/proxy/wdqs/bigdata/namespace/wdq/sparql"
+  http_headers: 
+    User-Agent: "project-boilerplate Snowman (https://github.com/glaciers-in-archives/snowman)"
